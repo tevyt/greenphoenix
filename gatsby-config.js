@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Green Phoenix | Your Digital Rebirth`,
+    description: `Fullstack Software Developer experienced in digital transformation using agile techniques and cloud native tools.`,
+    author: `@tevyt`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        // icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/symbol.png`,
       },
     },
     `gatsby-plugin-sass`,
