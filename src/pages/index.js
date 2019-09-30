@@ -1,6 +1,15 @@
 import React from "react"
+
+import GreetingSection from "../sections/greeting"
 import SEO from "../components/seo"
 
-const IndexPage = () => <SEO title="Home" />
+function IndexPage() {
+  return (
+    <React.Fragment>
+      <SEO title="Home" />
+      <GreetingSection />
+    </React.Fragment>
+  )
+}
 
 export default IndexPage
