@@ -1,1 +1,29 @@
 @import "~bulma/bulma.sass";
+
+.greeting {
+  &-head {
+    margin: 0 auto;
+    width: 80%;
+    &-logo {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+    }
+    &-link {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      a {
+        background-color: transparent;
+        border-color: #18624a;
+        color: #18624a;
+        &:hover {
+          background-color: #18624a;
+          border-color: #18624a;
+          color: #000000;
+        }
+      }
+    }
+  }
+}
