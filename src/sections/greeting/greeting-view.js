@@ -16,14 +16,26 @@ import "./greeting-styles.scss"
 
 function Greeting() {
   const {
-    file: {
+    largeLogo: {
       childImageSharp: {
-        fixed: { src },
+        fixed: { src: largeLogoSrc },
+      },
+    },
+    smallLogo: {
+      childImageSharp: {
+        fixed: { src: smallLogoSrc },
       },
     },
   } = useStaticQuery(graphql`
-    query GetSymbol {
-      file(relativePath: { eq: "symbol.png" }) {
+    {
+      largeLogo: file(relativePath: { eq: "LogoLarge.png" }) {
+        childImageSharp {
+          fixed(width: 500) {
+            src
+          }
+        }
+      }
+      smallLogo: file(relativePath: { eq: "symbol.png" }) {
         childImageSharp {
           fixed(width: 54, height: 105) {
             src
@@ -32,12 +44,13 @@ function Greeting() {
       }
     }
   `)
+
   return (
     <section className="section greeting hero is-fullheight is-black">
       <div className="hero-head columns greeting-head">
         <div className="column greeting-head-logo">
-          <Link to="/test">
-            <img src={src} alt="home link" />
+          <Link to="/">
+            <img src={smallLogoSrc} alt="home link" />
           </Link>
         </div>
         <div className="column greeting-head-link">
@@ -50,10 +63,7 @@ function Greeting() {
         <div className="container has-text-centered greeting-body">
           <h1 className="title">Green Phoenix</h1>
           <h2 className="subtitle">Your Digital Rebirth</h2>
-          <img
-            src="http://placehold.it/200"
-            alt="An green outline of a phoenix"
-          />
+          <img src={largeLogoSrc} alt="An green outline of a phoenix" />
         </div>
       </div>
       <div className="hero-footer">
