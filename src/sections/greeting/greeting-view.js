@@ -35,6 +35,16 @@ function Greeting() {
           </Link>
         </div>
       </div>
+      <div className="hero-body">
+        <div className="container has-text-centered greeting-body">
+          <h1 className="title">Green Phoenix</h1>
+          <h2 className="subtitle">Your Digital Rebirth</h2>
+          <img
+            src="http://placehold.it/200"
+            alt="An green outline of a phoenix"
+          />
+        </div>
+      </div>
     </section>
   )
 }

@@ -1,6 +1,7 @@
 @import "~bulma/bulma.sass";
 
 .greeting {
+  font-family: "Jura";
   &-head {
     margin: 0 auto;
     width: 80%;
@@ -24,6 +25,11 @@
           color: #000000;
         }
       }
+    }
+  }
+  &-body {
+    h1 {
+      font-size: 3rem;
     }
   }
 }
