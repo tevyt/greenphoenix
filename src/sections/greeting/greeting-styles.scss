@@ -1,5 +1,6 @@
 @import "~bulma/bulma.sass";
 
+$primary: #18624a;
 .greeting {
   font-family: "Jura";
   &-head {
@@ -17,11 +18,11 @@
       justify-content: center;
       a {
         background-color: transparent;
-        border-color: #18624a;
-        color: #18624a;
+        border-color: $primary;
+        color: $primary;
         &:hover {
-          background-color: #18624a;
-          border-color: #18624a;
+          background-color: $primary;
+          border-color: $primary;
           color: #000000;
         }
       }
@@ -31,5 +32,13 @@
     h1 {
       font-size: 3rem;
     }
+  }
+  &-footer {
+    color: $primary;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: inherit;
+    width: 95% !important;
   }
 }
