@@ -102,7 +102,7 @@ function ToolLogos() {
     <React.Fragment>
       {icons.map((icon, index) => (
         <span className="icon" key={index}>
-          <FontAwesomeIcon icon={icon} size={iconSize} />
+          <FontAwesomeIcon icon={faJava} size={iconSize} />
         </span>
       ))}
     </React.Fragment>

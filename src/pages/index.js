@@ -1,14 +1,13 @@
 import React from "react"
 
 import GreetingSection from "../sections/greeting"
-import SEO from "../components/seo"
+import Container from "../components/container"
 
 function IndexPage() {
   return (
-    <React.Fragment>
-      <SEO title="Home" />
+    <Container title={"Home"}>
       <GreetingSection />
-    </React.Fragment>
+    </Container>
   )
 }
 
