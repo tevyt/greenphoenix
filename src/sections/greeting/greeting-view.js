@@ -15,38 +15,9 @@ import {
 import "./greeting-styles.scss"
 import HomeLink from "../../components/HomeLink"
 import MessageLink from "../../components/MessageLink"
+import LargeLogo from "../../components/LargeLogo/large-logo-view"
 
 function Greeting() {
-  const {
-    largeLogo: {
-      childImageSharp: {
-        fixed: { src: largeLogoSrc },
-      },
-    },
-    smallLogo: {
-      childImageSharp: {
-        fixed: { src: smallLogoSrc },
-      },
-    },
-  } = useStaticQuery(graphql`
-    {
-      largeLogo: file(relativePath: { eq: "LogoLarge.png" }) {
-        childImageSharp {
-          fixed(width: 500) {
-            src
-          }
-        }
-      }
-      smallLogo: file(relativePath: { eq: "symbol.png" }) {
-        childImageSharp {
-          fixed(width: 54, height: 105) {
-            src
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <section className="section greeting hero is-fullheight is-black">
       <div className="hero-head greeting-head">
@@ -57,7 +28,7 @@ function Greeting() {
         <div className="container has-text-centered greeting-body">
           <h1 className="title">Green Phoenix</h1>
           <h2 className="subtitle">Your Digital Rebirth</h2>
-          <img src={largeLogoSrc} alt="An green outline of a phoenix" />
+          <LargeLogo />
         </div>
       </div>
       <div className="hero-footer">

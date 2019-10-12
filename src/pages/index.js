@@ -1,7 +1,7 @@
 import React from "react"
 
 import GreetingSection from "../sections/greeting"
-import Container from "../components/container"
+import Container from "../components/Container"
 
 function IndexPage() {
   return (
