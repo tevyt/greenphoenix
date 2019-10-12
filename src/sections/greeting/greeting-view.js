@@ -1,21 +1,10 @@
 import React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faJava,
-  faAndroid,
-  faPython,
-  faAngular,
-  faReact,
-  faNodeJs,
-  faAws,
-  faGitAlt,
-} from "@fortawesome/free-brands-svg-icons"
 
 import "./greeting-styles.scss"
 import HomeLink from "../../components/HomeLink"
 import MessageLink from "../../components/MessageLink"
 import LargeLogo from "../../components/LargeLogo/large-logo-view"
+import ToolBanner from "../../components/ToolBanner"
 
 function Greeting() {
   return (
@@ -32,45 +21,9 @@ function Greeting() {
         </div>
       </div>
       <div className="hero-footer">
-        <div className="container greeting-footer">
-          <ToolLogos />
-        </div>
+        <ToolBanner />
       </div>
     </section>
-  )
-}
-
-function ToolLogos() {
-  const tabletMaxWidth = 1024
-  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
-  React.useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth)
-    }
-    window.addEventListener("resize", handleResize)
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  })
-  const iconSize = windowWidth <= tabletMaxWidth ? "2x" : "3x"
-  const icons = [
-    faJava,
-    faGitAlt,
-    faAndroid,
-    faPython,
-    faAngular,
-    faReact,
-    faNodeJs,
-    faAws,
-  ]
-  return (
-    <React.Fragment>
-      {icons.map((icon, index) => (
-        <span className="icon" key={index}>
-          <FontAwesomeIcon icon={icon} size={iconSize} />
-        </span>
-      ))}
-    </React.Fragment>
   )
 }
 
