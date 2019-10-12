@@ -11,20 +11,13 @@ import {
   faGitAlt,
 } from "@fortawesome/free-brands-svg-icons"
 
+import useWindowWidth from "../../hooks/useWindowWidth"
+
 import "./tool-banner-styles.scss"
 
 function ToolBanner() {
   const tabletMaxWidth = 1024
-  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
-  React.useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth)
-    }
-    window.addEventListener("resize", handleResize)
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  })
+  const windowWidth = useWindowWidth()
   const iconSize = windowWidth <= tabletMaxWidth ? "2x" : "3x"
   const icons = [
     faJava,
