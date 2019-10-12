@@ -47,7 +47,7 @@ function Greeting() {
 
   return (
     <section className="section greeting hero is-fullheight is-black">
-      <div className="hero-head columns greeting-head">
+      <div className="hero-head columns greeting-head is-mobile">
         <div className="column greeting-head-logo">
           <Link to="/">
             <img src={smallLogoSrc} alt="home link" />
@@ -68,33 +68,44 @@ function Greeting() {
       </div>
       <div className="hero-footer">
         <div className="container greeting-footer">
-          <span className="icon">
-            <FontAwesomeIcon icon={faJava} size="3x" />
-          </span>
-          <span className="icon">
-            <FontAwesomeIcon icon={faGitAlt} size="3x" />
-          </span>
-          <span className="icon">
-            <FontAwesomeIcon icon={faAndroid} size="3x" />
-          </span>
-          <span className="icon">
-            <FontAwesomeIcon icon={faPython} size="3x" />
-          </span>
-          <span className="icon">
-            <FontAwesomeIcon icon={faAngular} size="3x" />
-          </span>
-          <span className="icon">
-            <FontAwesomeIcon icon={faReact} size="3x" />
-          </span>
-          <span className="icon">
-            <FontAwesomeIcon icon={faNodeJs} size="3x" />
-          </span>
-          <span className="icon">
-            <FontAwesomeIcon icon={faAws} size="3x" />
-          </span>
+          <ToolLogos />
         </div>
       </div>
     </section>
+  )
+}
+
+function ToolLogos() {
+  const tabletMaxWidth = 1024
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
+  React.useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+    window.addEventListener("resize", handleResize)
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  })
+  const iconSize = windowWidth <= tabletMaxWidth ? "2x" : "3x"
+  const icons = [
+    faJava,
+    faGitAlt,
+    faAndroid,
+    faPython,
+    faAngular,
+    faReact,
+    faNodeJs,
+    faAws,
+  ]
+  return (
+    <React.Fragment>
+      {icons.map((icon, index) => (
+        <span className="icon" key={index}>
+          <FontAwesomeIcon icon={icon} size={iconSize} />
+        </span>
+      ))}
+    </React.Fragment>
   )
 }
 

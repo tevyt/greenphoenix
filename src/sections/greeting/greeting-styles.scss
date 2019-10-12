@@ -1,6 +1,8 @@
 @import "~bulma/bulma.sass";
 
 $primary: #18624a;
+$phone-max-width: 375px;
+$tablet-max-width: 1024px;
 .greeting {
   font-family: "Jura";
   &-head {
@@ -12,6 +14,11 @@ $primary: #18624a;
       flex-direction: column;
     }
     &-link {
+      @mixin highlighted() {
+        background-color: $primary;
+        border-color: $primary;
+        color: #000000;
+      }
       align-items: flex-end;
       display: flex;
       flex-direction: column;
@@ -21,9 +28,10 @@ $primary: #18624a;
         border-color: $primary;
         color: $primary;
         &:hover {
-          background-color: $primary;
-          border-color: $primary;
-          color: #000000;
+          @include highlighted();
+        }
+        @media screen and (max-width: $tablet-max-width) {
+          @include highlighted();
         }
       }
     }
