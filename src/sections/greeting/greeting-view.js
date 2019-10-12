@@ -2,7 +2,7 @@ import React from "react"
 
 import "./greeting-styles.scss"
 import HomeLink from "../../components/HomeLink"
-import MessageLink from "../../components/MessageLink"
+import ButtonLink from "../../components/ButtonLink"
 import LargeLogo from "../../components/LargeLogo/large-logo-view"
 import ToolBanner from "../../components/ToolBanner"
 
@@ -11,7 +11,7 @@ function Greeting() {
     <section className="section greeting hero is-fullheight is-black">
       <div className="hero-head greeting-head">
         <HomeLink />
-        <MessageLink />
+        <ButtonLink to="/message" label="Message" />
       </div>
       <div className="hero-body">
         <div className="container has-text-centered greeting-body">

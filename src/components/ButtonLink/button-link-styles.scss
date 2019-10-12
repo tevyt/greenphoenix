@@ -1,7 +1,7 @@
 @import "../../styles/pallette";
 @import "../../styles/dimensions";
 
-a.message-link {
+a.button-link {
   @mixin highlighted() {
     background-color: $primary;
     border-color: $primary;
