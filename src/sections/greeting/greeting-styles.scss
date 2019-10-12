@@ -1,38 +1,14 @@
-$primary: #18624a;
-$phone-max-width: 375px;
-$tablet-max-width: 1024px;
+@import "../../styles/pallette";
+@import "../../styles/dimensions";
+
 .greeting {
   font-family: "Jura";
   &-head {
+    align-items: center;
+    display: flex;
     margin: 0 auto;
     width: 80%;
-    &-logo {
-      align-items: flex-start;
-      display: flex;
-      flex-direction: column;
-    }
-    &-link {
-      @mixin highlighted() {
-        background-color: $primary;
-        border-color: $primary;
-        color: #000000;
-      }
-      align-items: flex-end;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      a {
-        background-color: transparent;
-        border-color: $primary;
-        color: $primary;
-        &:hover {
-          @include highlighted();
-        }
-        @media screen and (max-width: $tablet-max-width) {
-          @include highlighted();
-        }
-      }
-    }
+    justify-content: space-between;
   }
   &-body {
     h1 {

@@ -1,0 +1,19 @@
+@import "../../styles/pallette";
+@import "../../styles/dimensions";
+
+a.message-link {
+  @mixin highlighted() {
+    background-color: $primary;
+    border-color: $primary;
+    color: #000000;
+  }
+  background-color: transparent;
+  border-color: $primary;
+  color: $primary;
+  &:hover {
+    @include highlighted();
+  }
+  @media screen and (max-width: $tablet-max-width) {
+    @include highlighted();
+  }
+}

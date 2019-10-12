@@ -13,6 +13,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 
 import "./greeting-styles.scss"
+import HomeLink from "../../components/HomeLink"
+import MessageLink from "../../components/MessageLink"
 
 function Greeting() {
   const {
@@ -47,17 +49,9 @@ function Greeting() {
 
   return (
     <section className="section greeting hero is-fullheight is-black">
-      <div className="hero-head columns greeting-head is-mobile">
-        <div className="column greeting-head-logo">
-          <Link to="/">
-            <img src={smallLogoSrc} alt="home link" />
-          </Link>
-        </div>
-        <div className="column greeting-head-link">
-          <Link className="button is-outlined is-rounded" to="/message">
-            Message
-          </Link>
-        </div>
+      <div className="hero-head greeting-head">
+        <HomeLink />
+        <MessageLink />
       </div>
       <div className="hero-body">
         <div className="container has-text-centered greeting-body">
@@ -102,7 +96,7 @@ function ToolLogos() {
     <React.Fragment>
       {icons.map((icon, index) => (
         <span className="icon" key={index}>
-          <FontAwesomeIcon icon={faJava} size={iconSize} />
+          <FontAwesomeIcon icon={icon} size={iconSize} />
         </span>
       ))}
     </React.Fragment>
