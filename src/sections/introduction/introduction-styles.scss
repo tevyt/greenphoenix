@@ -28,5 +28,14 @@
     transform: translateX(-50%);
     text-align: center;
     width: 80%;
+    display: flex;
+    div.tool-set {
+      box-sizing: border-box;
+      width: 33%;
+      &:nth-child(2) {
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+      }
+    }
   }
 }

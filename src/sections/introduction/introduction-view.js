@@ -1,6 +1,8 @@
 import React from "react"
 
 import "./introduction-styles.scss"
+import ToolSet from "../../components/ToolSet"
+import { faJava, faReact, faAws } from "@fortawesome/free-brands-svg-icons"
 
 function Introduction() {
   return (
@@ -16,10 +18,14 @@ function Introduction() {
         </p>
       </div>
       <div className="introduction-skills">
-        <div>test</div>
-        <div>test</div>
-        <div>test</div>
-        <div>test</div>
+        <ToolSet
+          description="I can do some things, can you do some things?"
+          icon={faJava}
+          tools={["React", "React", "React"]}
+          name="Server-side Development"
+        />
+        <ToolSet tools={["React", "React", "React"]} icon={faReact} />
+        <ToolSet tools={["React", "React", "React"]} icon={faAws} />
       </div>
     </section>
   )
