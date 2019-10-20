@@ -10,9 +10,23 @@
     width: 60%;
     &-name {
       font-size: 3em;
+      font-weight: bold;
     }
     &-summary {
       font-size: 1.5em;
     }
+  }
+  &-skills {
+    background-color: black;
+    border-radius: 10px;
+    border: 0.5px solid white;
+    color: white;
+    left: 50%;
+    position: absolute;
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    text-align: center;
+    width: 80%;
   }
 }
