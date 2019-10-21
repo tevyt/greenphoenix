@@ -4,6 +4,8 @@ import "./introduction-styles.scss"
 import ToolSet from "../../components/ToolSet"
 import { faJava, faReact, faAws } from "@fortawesome/free-brands-svg-icons"
 
+import { clientSide, devOps, serverSide } from "./skills.json"
+
 function Introduction() {
   return (
     <section className="introduction section">
@@ -19,13 +21,23 @@ function Introduction() {
       </div>
       <div className="introduction-skills">
         <ToolSet
-          description="I can do some things, can you do some things?"
+          description={serverSide.description}
           icon={faJava}
-          tools={["React", "React", "React"]}
-          name="Server-side Development"
+          tools={serverSide.tools}
+          name={serverSide.name}
         />
-        <ToolSet tools={["React", "React", "React"]} icon={faReact} />
-        <ToolSet tools={["React", "React", "React"]} icon={faAws} />
+        <ToolSet
+          description={clientSide.description}
+          name={clientSide.name}
+          tools={clientSide.tools}
+          icon={faReact}
+        />
+        <ToolSet
+          description={devOps.description}
+          tools={devOps.tools}
+          icon={faAws}
+          name={devOps.name}
+        />
       </div>
     </section>
   )

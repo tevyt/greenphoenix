@@ -1,0 +1,42 @@
+{
+  "clientSide": {
+    "name": "Client-side Development",
+    "description": "I create engaging, interactive web and mobile user experiences. I can translate designs into responsive interfaces with real-time integrations.",
+    "tools": [
+      "React",
+      "Redux",
+      "SASS",
+      "GraphQL",
+      "Android SDK",
+      "JQuery",
+      "TypeScript"
+    ]
+  },
+  "serverSide": {
+    "name": "Server-side Development",
+    "description": "I can build fault-tolerant systems, orchastrating communications within a complex communication requirements, while securely manage customer data.",
+    "tools": [
+      "Spring-Boot",
+      "Jersey",
+      "Java",
+      "SQL Server",
+      "IBM Integration Bus",
+      "Express",
+      ".NET",
+      "C#"
+    ]
+  },
+  "devOps": {
+    "name": "DevOps",
+    "description": "I have experience creating tight integrations between development and administration. Automating the processes of configuring and managing infrastructure and deployments.",
+    "tools": [
+      "TeamCity",
+      "Octopus Deploy",
+      "GitLab",
+      "Docker",
+      "Kubernetes",
+      "Sonar Qube",
+      "JMeter"
+    ]
+  }
+}
