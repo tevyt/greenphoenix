@@ -1,7 +1,23 @@
 @import "~bulma/bulma.sass";
+@import "../../styles/pallette";
 
 html,
 body {
   font-family: "Jura";
   background-color: black;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  border: 1px solid white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $primary;
 }
