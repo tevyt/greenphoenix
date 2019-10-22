@@ -1,12 +1,19 @@
-import React from "react"
+import React, { useRef } from "react"
 
 import "./introduction-styles.scss"
 import ToolSet from "../../components/ToolSet"
 import { faJava, faReact, faAws } from "@fortawesome/free-brands-svg-icons"
 
 import { clientSide, devOps, serverSide } from "./skills.json"
+import useWindowWidth from "../../hooks/useWindowWidth"
 
-function Introduction() {
+function Introduction({ setSpacerHeight }) {
+  const windowWidth = useWindowWidth()
+  const introductionSkills = useRef()
+  React.useEffect(() => {
+    setSpacerHeight(introductionSkills.current.clientHeight)
+  }, [windowWidth])
+
   return (
     <section className="introduction section">
       <div className="introduction-container">
@@ -19,7 +26,7 @@ function Introduction() {
           are essential for any organization seeking digital transformation.
         </p>
       </div>
-      <div className="introduction-skills">
+      <div className="introduction-skills" ref={introductionSkills}>
         <ToolSet
           description={serverSide.description}
           icon={faJava}
