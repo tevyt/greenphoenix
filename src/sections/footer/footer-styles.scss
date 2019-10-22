@@ -1,0 +1,42 @@
+@import "../../styles/dimensions";
+
+.site-footer {
+  background-color: white;
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    @media screen and (max-width: $phone-max-width) {
+      width: 95%;
+    }
+    padding: 60px 0;
+    div {
+      flex: 1;
+    }
+  }
+  &-greeting {
+    font-weight: bold;
+    font-size: 2em;
+    @media screen and (max-width: $phone-max-width) {
+      font-size: 1em;
+    }
+  }
+  &-message {
+    text-align: center;
+    font-size: 1.2em;
+    @media screen and (max-width: $phone-max-width) {
+      font-size: 0.75em;
+    }
+  }
+  &-link {
+    display: flex;
+    justify-content: center;
+    * {
+      @media screen and (max-width: $phone-max-width) {
+        font-size: 0.75em;
+      }
+    }
+  }
+}
