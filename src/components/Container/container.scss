@@ -1,5 +1,7 @@
-@import "~bulma/bulma.sass";
 @import "../../styles/pallette";
+$tooltip-background-color: $primary;
+@import "~bulma/bulma.sass";
+@import "~bulma-tooltip";
 
 html,
 body {

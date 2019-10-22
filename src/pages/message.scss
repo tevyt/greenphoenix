@@ -1,0 +1,13 @@
+@import "../styles/pallette";
+
+.message-page {
+  border-bottom: 1px solid white;
+  &-header {
+    width: 80%;
+    margin: auto;
+    color: $primary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
