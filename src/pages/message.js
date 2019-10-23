@@ -5,6 +5,7 @@ import { faUndo } from "@fortawesome/free-solid-svg-icons"
 
 import "./message.scss"
 import Container from "../components/Container"
+import sendEmail from "../services/sendEmail"
 
 function Message() {
   const [name, setName] = React.useState("")
@@ -19,6 +20,26 @@ function Message() {
     setName("")
     setEmailAddress("")
     setMessage("")
+  }
+
+  const [alertType, setAlertType] = React.useState(null)
+  const clearAlert = () => setAlertType(null)
+
+  const [sending, setSending] = React.useState(false)
+
+  const handleFormSubmit = async e => {
+    e.preventDefault()
+    try {
+      setSending(true)
+      resetForm()
+      await sendEmail(name, emailAddress, message)
+      setSending(false)
+      setAlertType("success")
+    } catch (e) {
+      console.error(e)
+      setSending(false)
+      setAlertType("failure")
+    }
   }
 
   return (
@@ -38,10 +59,31 @@ function Message() {
             />
           </div>
         </div>
+        {sending && (
+          <progress
+            className="progress is-small message-page-progress"
+            max="100"
+          >
+            15%
+          </progress>
+        )}
         <h1 className="message-page-greeting">
           Thanks for reaching out. You can leave a message with the form below.
         </h1>
-        <form className="message-page-form">
+        {alertType === "success" && (
+          <div className="notification message-page-notification message-page-notification-success">
+            <button class="delete" onClick={clearAlert}></button>I got your
+            message. I'll get back to you as soon as possible.
+          </div>
+        )}
+        {alertType === "failure" && (
+          <div className="notification message-page-notification is-danger">
+            <button class="delete" onClick={clearAlert}></button>
+            Sorry, your message wasn't sent. If the problem persists you can{" "}
+            <a href="mailto:travis.a.smith.ja@gmail.com">email me.</a>
+          </div>
+        )}
+        <form className="message-page-form" onSubmit={handleFormSubmit}>
           <div className="message-page-form-contact">
             <div>
               <label className="label">Name</label>
