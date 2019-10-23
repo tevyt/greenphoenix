@@ -14,7 +14,13 @@
       justify-content: space-between;
       width: 15%;
       color: $primary;
-      a {
+      @media screen and (max-width: $tablet-max-width) {
+        width: 20%;
+      }
+      @media screen and (max-width: $phone-max-width) {
+        width: 55%;
+      }
+      .social-link {
         text-decoration: none;
         color: inherit;
       }

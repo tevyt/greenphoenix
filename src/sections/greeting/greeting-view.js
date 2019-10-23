@@ -14,10 +14,13 @@ function Greeting() {
       <div className="hero-head greeting-head">
         <HomeLink />
         <div className="greeting-head-contact">
-          <a href="https://github.com/tevyt">
+          <a href="https://github.com/tevyt" className="social-link">
             <FontAwesomeIcon icon={faGithub} />
           </a>
-          <a href="https://www.linkedin.com/in/travisalexandersmith/">
+          <a
+            href="https://www.linkedin.com/in/travisalexandersmith/"
+            className="social-link"
+          >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
           <ButtonLink to="/message" label="Message" />
