@@ -20,6 +20,28 @@ function Message() {
             />
           </div>
         </div>
+        <h1 className="message-page-greeting">
+          Thanks for reaching out. You can leave a message with the form below.
+        </h1>
+        <form className="message-page-form">
+          <div className="message-page-form-contact">
+            <div>
+              <label className="label">Name</label>
+              <input className="input is-large" required />
+            </div>
+            <div>
+              <label className="label">Email</label>
+              <input className="input is-large" required type="email" />
+            </div>
+          </div>
+          <div className="message-page-form-message">
+            <label className="label">Message</label>
+            <textarea className="textarea" rows="10" required></textarea>
+          </div>
+          <button className="message-page-form-submit button is-rounded is-large">
+            Submit
+          </button>
+        </form>
       </div>
     </Container>
   )

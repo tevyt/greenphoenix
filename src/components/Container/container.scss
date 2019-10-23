@@ -23,3 +23,9 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: $primary;
 }
+::selection {
+  background: $primary; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $primary; /* Gecko Browsers */
+}
