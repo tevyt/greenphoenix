@@ -25,8 +25,8 @@ function Greeting() {
       </div>
       <div className="hero-body">
         <div className="container has-text-centered greeting-body">
-          <h1 className="title">Green Phoenix</h1>
-          <h2 className="subtitle">Your Digital Rebirth</h2>
+          <h1 className="title">Travis Smith</h1>
+          <h2 className="subtitle">Digital Rebirth</h2>
           <LargeLogo />
         </div>
       </div>
