@@ -12,7 +12,7 @@ function Introduction({ setSpacerHeight }) {
   const introductionSkills = useRef()
   React.useEffect(() => {
     setSpacerHeight(introductionSkills.current.clientHeight)
-  }, [windowWidth])
+  }, [windowWidth, setSpacerHeight])
 
   return (
     <section className="introduction section">

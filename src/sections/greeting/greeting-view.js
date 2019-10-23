@@ -15,16 +15,27 @@ function Greeting() {
         <HomeLink />
         <div className="greeting-head-contact">
           <a href="https://github.com/tevyt" className="social-link">
-            <FontAwesomeIcon icon={faGithub} />
+            <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
           <a
             href="https://www.linkedin.com/in/travisalexandersmith/"
             className="social-link"
           >
-            <FontAwesomeIcon icon={faLinkedin} />
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
           <ButtonLink to="/message" label="Message" />
         </div>
+      </div>
+      <div className="greeting-social">
+        <a href="https://github.com/tevyt" className="social-link">
+          <FontAwesomeIcon icon={faGithub} size="2x" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/travisalexandersmith/"
+          className="social-link"
+        >
+          <FontAwesomeIcon icon={faLinkedin} size="2x" />
+        </a>
       </div>
       <div className="hero-body">
         <div className="container has-text-centered greeting-body">

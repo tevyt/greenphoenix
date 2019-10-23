@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import "./footer-styles.scss"
 import ButtonLink from "../../components/ButtonLink"

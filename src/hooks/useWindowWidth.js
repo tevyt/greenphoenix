@@ -1,9 +1,9 @@
 import React from "react"
 
 function useWindowWidth() {
-  try {
-    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
-    React.useEffect(() => {
+  const [windowWidth, setWindowWidth] = React.useState(0)
+  React.useEffect(() => {
+    if (window) {
       const handleResize = () => {
         setWindowWidth(window.innerWidth)
       }
@@ -11,14 +11,10 @@ function useWindowWidth() {
       return () => {
         window.removeEventListener("resize", handleResize)
       }
-    })
+    }
+  })
 
-    return windowWidth
-  } catch (e) {
-    //window is not available during server side rendering.
-    console.warn(e)
-    return 0
-  }
+  return windowWidth
 }
 
 export default useWindowWidth
