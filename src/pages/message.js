@@ -7,12 +7,30 @@ import "./message.scss"
 import Container from "../components/Container"
 
 function Message() {
+  const [name, setName] = React.useState("")
+  const [emailAddress, setEmailAddress] = React.useState("")
+  const [message, setMessage] = React.useState("")
+
+  const handleNameInput = e => setName(e.target.value)
+  const handleEmailAddressInput = e => setEmailAddress(e.target.value)
+  const handleMessageInput = e => setMessage(e.target.value)
+
+  const resetForm = () => {
+    setName("")
+    setEmailAddress("")
+    setMessage("")
+  }
+
   return (
     <Container title="Leave a message">
       <div className="message-page">
         <div className="message-page-header">
           <HomeLink />
-          <div className="tooltip is-tooltip-bottom" data-tooltip="reset">
+          <div
+            className="tooltip is-tooltip-bottom"
+            data-tooltip="reset"
+            onClick={resetForm}
+          >
             <FontAwesomeIcon
               icon={faUndo}
               className="tooltip"
@@ -27,18 +45,38 @@ function Message() {
           <div className="message-page-form-contact">
             <div>
               <label className="label">Name</label>
-              <input className="input is-large" required />
+              <input
+                className="input is-large"
+                required
+                value={name}
+                onChange={handleNameInput}
+              />
             </div>
             <div>
               <label className="label">Email</label>
-              <input className="input is-large" required type="email" />
+              <input
+                className="input is-large"
+                required
+                type="email"
+                value={emailAddress}
+                onChange={handleEmailAddressInput}
+              />
             </div>
           </div>
           <div className="message-page-form-message">
             <label className="label">Message</label>
-            <textarea className="textarea" rows="10" required></textarea>
+            <textarea
+              className="textarea"
+              rows="10"
+              required
+              value={message}
+              onChange={handleMessageInput}
+            ></textarea>
           </div>
-          <button className="message-page-form-submit button is-rounded is-large">
+          <button
+            className="message-page-form-submit button is-rounded is-large"
+            type="submit"
+          >
             Submit
           </button>
         </form>
