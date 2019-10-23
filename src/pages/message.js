@@ -116,7 +116,7 @@ function Message() {
             ></textarea>
           </div>
           <button
-            className="message-page-form-submit button is-rounded is-large"
+            className="message-page-form-submit button is-rounded is-large button-link"
             type="submit"
           >
             Submit
