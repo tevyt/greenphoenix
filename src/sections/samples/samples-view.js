@@ -15,7 +15,7 @@ function Samples() {
           sourceCodeUrl="https://www.github.com"
           liveDemoUrl="https://www.youtube.com"
         />
-        <Sample thumbnailUrl="http://placehold.it/300" />
+        <Sample thumbnailUrl="http://placehold.it/300" sourceCodeUrl="test" />
         <Sample thumbnailUrl="http://placehold.it/300" />
         <Sample thumbnailUrl="http://placehold.it/300" />
         <Sample thumbnailUrl="http://placehold.it/300" />

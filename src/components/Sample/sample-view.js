@@ -18,18 +18,22 @@ function Sample({
         <h1>{name}</h1>
         <p>{description}</p>
         <div className="sample-list-item-details-links">
-          <a className="button rounded">
-            <span className="icon">
-              <FontAwesomeIcon icon={faGithub} />
-            </span>
-            <span>Source Code</span>
-          </a>
-          <a className="button rounded">
-            <span className="icon">
-              <FontAwesomeIcon icon={faPlay} />
-            </span>
-            <span>Live Demo</span>
-          </a>
+          {sourceCodeUrl && (
+            <a className="button rounded" href={sourceCodeUrl}>
+              <span className="icon">
+                <FontAwesomeIcon icon={faGithub} />
+              </span>
+              <span>Source Code</span>
+            </a>
+          )}
+          {liveDemoUrl && (
+            <a className="button rounded" href={liveDemoUrl}>
+              <span className="icon">
+                <FontAwesomeIcon icon={faPlay} />
+              </span>
+              <span>Live Demo</span>
+            </a>
+          )}
         </div>
       </div>
       <div className="sample-list-item-thumb">
