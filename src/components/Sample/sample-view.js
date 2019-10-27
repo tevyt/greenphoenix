@@ -12,50 +12,29 @@ function Sample({
   liveDemoUrl,
   sourceCodeUrl,
 }) {
-  const [detailsShown, setDetailsShown] = React.useState(false)
-  const hideDetails = () => {
-    setDetailsShown(false)
-  }
-  const showDetails = () => {
-    setDetailsShown(true)
-  }
-  const content = () => {
-    if (detailsShown) {
-      return (
-        <div className="sample-list-item-details">
-          <h1>{name}</h1>
-          <p>{description}</p>
-          <div className="sample-list-item-details-links">
-            <a className="button rounded">
-              <span className="icon">
-                <FontAwesomeIcon icon={faGithub} />
-              </span>
-              <span>Source Code</span>
-            </a>
-            <a className="button rounded">
-              <span className="icon">
-                <FontAwesomeIcon icon={faPlay} />
-              </span>
-              <span>Live Demo</span>
-            </a>
-          </div>
-        </div>
-      )
-    } else {
-      return (
-        <div className="sample-list-item-thumb">
-          <img src={thumbnailUrl} alt={description} />
-        </div>
-      )
-    }
-  }
   return (
-    <div
-      className="sample-list-item"
-      onMouseEnter={showDetails}
-      onMouseLeave={hideDetails}
-    >
-      {content()}
+    <div className="sample-list-item">
+      <div className="sample-list-item-details">
+        <h1>{name}</h1>
+        <p>{description}</p>
+        <div className="sample-list-item-details-links">
+          <a className="button rounded">
+            <span className="icon">
+              <FontAwesomeIcon icon={faGithub} />
+            </span>
+            <span>Source Code</span>
+          </a>
+          <a className="button rounded">
+            <span className="icon">
+              <FontAwesomeIcon icon={faPlay} />
+            </span>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+      <div className="sample-list-item-thumb">
+        <img src={thumbnailUrl} alt={description} />
+      </div>
     </div>
   )
 }
