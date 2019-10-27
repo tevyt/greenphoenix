@@ -1,0 +1,11 @@
+@import "../../styles/pallette";
+.samples {
+  background-color: $primary;
+  font-size: 1.5em;
+  color: black;
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
