@@ -2,7 +2,12 @@
 @import "../../styles/dimensions";
 .samples {
   background-color: $primary;
-  font-size: 1.5em;
+  margin-top: 60px;
+  text-align: center;
+  h3 {
+    font-size: 2em;
+    font-weight: bold;
+  }
   color: black;
   &-list {
     display: flex;
@@ -20,6 +25,9 @@
     justify-content: center;
     &-link {
       border: 1px solid black;
+      @media screen and (max-width: $tablet-max-width) {
+        font-size: 1.2em;
+      }
       &:hover {
         color: $primary;
         background-color: black;
