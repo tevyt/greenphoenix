@@ -3,6 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Sample from "../../components/Sample"
 
 import "./samples-styles.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 function Samples() {
   const {
@@ -56,6 +58,17 @@ function Samples() {
             />
           )
         )}
+      </div>
+      <div className="samples-more">
+        <a
+          className="button rounded samples-more-link"
+          href="https://www.github.com/tevyt"
+        >
+          <i className="icon">
+            <FontAwesomeIcon icon={faGithub} />
+          </i>
+          <span>See more on Github.</span>
+        </a>
       </div>
     </div>
   )

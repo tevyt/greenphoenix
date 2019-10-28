@@ -14,4 +14,22 @@
       width: 100%;
     }
   }
+  &-more {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    &-link {
+      border: 1px solid black;
+      &:hover {
+        color: $primary;
+        background-color: black;
+        border: 1px solid black;
+      }
+      @media (hover: none) {
+        color: $primary;
+        background-color: black;
+        border: 1px solid black;
+      }
+    }
+  }
 }
