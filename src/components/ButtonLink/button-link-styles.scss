@@ -16,4 +16,8 @@ a.button-link {
   @media screen and (max-width: $tablet-max-width) {
     @include highlighted();
   }
+
+  @media (hover: none) {
+    @include highlighted();
+  }
 }
