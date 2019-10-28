@@ -1,7 +1,9 @@
 @import "../../styles/pallette";
+@import "../../styles/dimensions";
 .sample-list {
   &-item {
     width: 30%;
+    min-height: 200px;
     margin: 20px 0;
     &-thumb {
       width: 100%;
@@ -41,6 +43,11 @@
             background-color: $primary;
             border: 1px solid $primary;
           }
+          @media (hover: none) {
+            color: black;
+            background-color: $primary;
+            border: 1px solid $primary;
+          }
         }
       }
     }
@@ -51,6 +58,24 @@
       .sample-list-item-details {
         display: flex;
       }
+    }
+    @media (hover: none) {
+      .sample-list-item-thumb {
+        display: none;
+      }
+      .sample-list-item-details {
+        display: flex;
+      }
+    }
+    @media screen and (max-width: $tablet-max-width) {
+      width: 40%;
+      .sample-list-item-details {
+        display: flex;
+        font-size: 0.65em;
+      }
+    }
+    @media screen and (max-width: $phone-max-width) {
+      width: 100%;
     }
   }
 }
