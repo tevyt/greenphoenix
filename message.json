@@ -1,0 +1,8 @@
+{
+  "Template": {
+    "TemplateName": "PortfolioMessage",
+    "SubjectPart": "{{name}} left a message on the portfolio.",
+    "HtmlPart": "<html><quote>{{message}}</quote><div>Contact: {{email}}</div>",
+    "TextPart": "{{message}}\r\nContact: {{email}}"
+  }
+}
