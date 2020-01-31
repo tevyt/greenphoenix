@@ -5,6 +5,7 @@ import GreetingSection from "../sections/greeting"
 import IntroductionSection from "../sections/introduction"
 import FooterSection from "../sections/footer"
 import SamplesSection from "../sections/samples"
+import CertificationsSection from "../sections/certifications"
 
 function IndexPage() {
   /**
@@ -21,6 +22,7 @@ function IndexPage() {
       <IntroductionSection setSpacerHeight={setSpacerHeight} />
       <div style={{ backgroundColor: "transparent", height: spacerHeight }} />
       <SamplesSection />
+      <CertificationsSection />
       <FooterSection />
     </Container>
   )
