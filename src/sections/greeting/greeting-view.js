@@ -8,17 +8,19 @@ import ToolBanner from "../../components/ToolBanner"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 
+import { GITHUB_PROFILE_URL, LINKEDIN_PROFILE_URL } from "../../constants"
+
 function Greeting() {
   return (
     <section className="section greeting hero is-fullheight is-black">
       <div className="hero-head greeting-head">
         <HomeLink />
         <div className="greeting-head-contact">
-          <a href="https://github.com/tevyt" className="social-link">
+          <a href={GITHUB_PROFILE_URL} className="social-link">
             <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
           <a
-            href="https://www.linkedin.com/in/travisalexandersmith/"
+            href={LINKEDIN_PROFILE_URL}
             className="social-link"
           >
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
@@ -27,11 +29,11 @@ function Greeting() {
         </div>
       </div>
       <div className="greeting-social">
-        <a href="https://github.com/tevyt" className="social-link">
+        <a href={GITHUB_PROFILE_URL} className="social-link">
           <FontAwesomeIcon icon={faGithub} size="2x" />
         </a>
         <a
-          href="https://www.linkedin.com/in/travisalexandersmith/"
+          href={LINKEDIN_PROFILE_URL}
           className="social-link"
         >
           <FontAwesomeIcon icon={faLinkedin} size="2x" />
