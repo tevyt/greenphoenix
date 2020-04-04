@@ -5,6 +5,7 @@ import Sample from "../../components/Sample"
 import "./samples-styles.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { GITHUB_PROFILE_URL } from "../../constants";
 
 function Samples() {
   const {
@@ -62,7 +63,7 @@ function Samples() {
       <div className="samples-more">
         <a
           className="button rounded samples-more-link"
-          href="https://www.github.com/tevyt"
+          href={GITHUB_PROFILE_URL}
         >
           <i className="icon">
             <FontAwesomeIcon icon={faGithub} />
