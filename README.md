@@ -28,6 +28,7 @@ The application assumes the following content models within contentful:
 | liveDemoUrl(optional)| Short text | URL of project live demo|
 
 * Certification
+
 | FieldName  | Datatype | Description          |
 |----------- |----------|----------------------|
 | name|Short text| Name of the certification|
