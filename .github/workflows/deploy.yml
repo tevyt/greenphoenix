@@ -1,0 +1,44 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy
+
+on:
+  release: [published]
+
+jobs:
+  deploy:
+      runs-on: ubuntu-latest
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}   
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: "us-east-1"
+        GATSBY_PORTFOLIO_AWS_REGION: "us-east-1"
+        GATSBY_PORTFOLIO_SES_MESSAGE_DESTINATION: travis.a.smith.ja@gmail.com
+        GATSBY_PORTFOLIO_SES_MESSAGE_SOURCE: me@travisalexandersmith.me
+        GATSBY_PORTFOLIO_COGNITO_IDENTITY_POOL: ${{ secrets.COGNITO_IDENTITY_POOL }}
+        GATSBY_PORTFOLIO_CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+        GATSBY_PORTFOLIO_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2.1.0
+          
+        - name: Setup Node.js for use with actions
+          uses: actions/setup-node@v1.1.0
+          with:
+            version: 10.x
+        - name: Install Dependencies
+          run: npm install
+        
+        - name: Build Deployment Bundle
+          run: npm run build
+          
+        - name: Sync S3
+          uses: ItsKarma/aws-cli@v1.70.0
+          with:
+            args: s3 sync --delete --acl public-read public/ s3://travis-smith-portfolio/
+            
+        - name: Invalidate CloudFormation Cache
+          uses: ItsKarma/aws-cli@v1.70.0
+          with:
+            args: cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+          
