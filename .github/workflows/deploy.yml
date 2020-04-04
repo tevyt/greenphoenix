@@ -20,6 +20,7 @@ jobs:
         GATSBY_PORTFOLIO_COGNITO_IDENTITY_POOL: ${{ secrets.COGNITO_IDENTITY_POOL }}
         GATSBY_PORTFOLIO_CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
         GATSBY_PORTFOLIO_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+        GATSBY_PORTFOLIO_CONTENTFUL_HOST: "cdn.contentful.com"
       steps:
         - name: Checkout
           uses: actions/checkout@v2.1.0
